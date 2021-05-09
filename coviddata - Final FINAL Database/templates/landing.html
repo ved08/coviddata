@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.myButton {
+        background-color:#44c767;
+        border-radius:28px;
+        border:1px solid #18ab29;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:17px;
+        padding:16px 31px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #2f6627;
+        display: table-cell;
+        vertical-align: middle;
+        display: table;
+        margin: auto;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+p {text-align: center;}
+
+
+</style>
+</head>
+<body>
+
+<h2>Welcome to CodingForAll, please select the desired option: </h2>
+
+<div>
+    <form action="/form" method="POST">
+        
+            <input  class="myButton" type="submit" value="Patient Registration">
+        </div>
+    </form>
+</div>
+<div>
+    <form action="/authenticate" method="POST">
+        
+            <input  class="myButton" type="submit" value="Volunteer Registration">
+        </div>
+    </form>
+</div>
+<div>
+    <form action="/jointeam" method="POST">
+        
+            <input  class="myButton" type="submit" value="Join CodingForAll">
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

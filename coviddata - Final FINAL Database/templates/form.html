@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<!-- <div class="container">
+    <form action="/data" method="POST">
+        <div class="row">
+            <input type="submit" value="VIEW OTHER COVID DATA">
+        </div>
+    </form>
+</div> -->
+<body>
+
+<h2>Enter Your Details</h2>
+<div class="container">
+  <form action="/resources" method="POST">
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter Patient Name </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Patient name.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter The Blood Group </label>
+      </div>
+      <div class="col-75">
+        <select name="bloodgroup" id="name" class="form-control"required>
+          
+          <option>A+</option>
+          <option>A-</option>
+         
+          <option>B+</option>
+          <option>B-</option>
+      
+          <option>AB+</option>
+          <option>AB-</option>
+       
+          <option>O+</option>
+          <option>O-</option>
+       
+          <option>Unknown</option>
+      </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter The Age </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="age" placeholder="Your Age.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter The Hospital Name </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="hospital" placeholder="The Hospital Name.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="eId">Enter The State</label>
+      </div>
+      <div class="col-75">
+      <select name="state" id="state" class="form-control">
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+        <option value="Daman and Diu">Daman and Diu</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Puducherry">Puducherry</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+        </select>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="eId">Enter the city</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="eId" name="city" placeholder="The city.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="eId">Enter The Phone Number</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="eId" name="phnumber" placeholder="10 digit phone number.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter The Relationship with Patient </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="relationshipwithpatient" placeholder="Relationship with Patient.."required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="eId">Enter The Requirements</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="eId" name="requirement" placeholder="Type/Details of the support required (like - hospital beds, oxygen, ventilators, medication, plasma, ambulances, food):"required>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Enter The spO2 level </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="spo2" placeholder="Enter spO2 level.."required>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

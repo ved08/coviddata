@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+p {text-align: center}
+
+.row{text-align: center}
+
+</style>
+</head>
+<body>
+
+
+<p>Your Requirements have been submitted successfully and will be reviewed by the concerned NGOs shortly.</p>
+<div class="container">
+    <form action="/data" method="POST">
+        <div class="row">
+            <input type="submit" value="VIEW OTHER COVID DATA">
+        </div>
+    </form>
+    <form action="/sharepost" method="POST">
+        <div class="row">
+            <input type="submit" value="SHARE POST">
+        </div>
+    </form>
+</div>
+<div class="container">
+    {% for index in links %}
+        <td><a href={{'http://' + index}} target="_blank" > mylink </a></td>
+    {% endfor %} 
+
+
+</body>
+</html>
