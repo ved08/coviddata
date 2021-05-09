@@ -1,1 +1,0 @@
-Patient name,Blood group,Age,Hospital,State,City,Phone Number,Relationship with patient,Requirements,Spo2 Level
