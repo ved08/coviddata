@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+          apiKey: "AIzaSyA_xtriBFdT2gewhLt1j_XKftSqcoiuJJs",
+          authDomain: "cfa-coviddata.firebaseapp.com",
+          projectId: "cfa-coviddata",
+          storageBucket: "cfa-coviddata.appspot.com",
+          messagingSenderId: "541721075264",
+          appId: "1:541721075264:web:1dcc8318cbfe3a5c5cc9a5",
+          measurementId: "G-E7Q82H61V2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var ui = new firebaseui.auth.AuthUI(firebase.auth())
+    </script>
+
+    <script>
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    const uid = authResult.user.uid 
+                    window.location.assign(`/instructions`);
+                    console.log("This is the redirect page")
+                    return false;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            signInFlow: 'popup',
+            signInSuccessUrl: 'http://localhost:5000/instructions', //To be changed in production
+            signInOptions: [{
+                provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                defaultCountry: "IN",
+            }],
+            // Terms of service url.
+            // tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            // privacyPolicyUrl: '<your-privacy-policy-url>'
+        };
+        ui.start('#firebaseui-auth-container', uiConfig );
+    </script>
+
+    <h1>Sign-In</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+</body>
+</html>
