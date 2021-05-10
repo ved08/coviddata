@@ -31,6 +31,11 @@ def appenddata(name,bloodgroup,age,hospital,state,city,phnumber,relationship,req
     user_collection.insert({"Patient's Name":f"{name}",'Blood Group':f"{bloodgroup}",'Age':f"{age}",'Hospital':f"{hospital}",'State':f"{state}",'City':f"{city}",'Relationship with Patient':f"{relationship}",'Phone Number':f"{phnumber}",'Requirements':f"{requirement}",'Spo2 level':f"{spo2}"})
 
 
+@app.route('/auth', methods = ['POST'])
+def auth():
+    return render_template('auth.html')
+
+    
 @app.route('/form',methods = ['POST'])#render the form
 def form():
     return render_template('form.html')
